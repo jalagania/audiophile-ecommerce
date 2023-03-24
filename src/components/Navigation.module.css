@@ -1,0 +1,45 @@
+nav {
+  max-width: 105rem;
+  margin: 0 auto;
+  padding: 3.5rem 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menuIcon {
+  display: none;
+}
+
+.navLinks {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 3.4rem;
+}
+
+.navLinks button {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: all 0.2s;
+}
+
+.cartIcon {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .navLinks button:hover {
+    color: var(--orange);
+  }
+
+  .cartIcon img:hover {
+    filter: brightness(0) saturate(100%) invert(53%) sepia(41%) saturate(648%)
+      hue-rotate(338deg) brightness(97%) contrast(95%);
+  }
+}

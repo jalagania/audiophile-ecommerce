@@ -1,3 +1,11 @@
+:root {
+  --orange: #d87d4a;
+  --orange-hover: #fbaf85;
+  --black-light: #101010;
+  --gray: #f1f1f1;
+  --gray-light: #fafafa;
+}
+
 *,
 ::before,
 ::after {
@@ -33,7 +41,9 @@ select {
 }
 
 button {
+  background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 a:link,
