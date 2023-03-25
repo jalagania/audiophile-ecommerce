@@ -1,0 +1,41 @@
+.bestgearSection {
+  max-width: 105rem;
+  margin: 0 auto;
+  padding: 20rem 0;
+  background-color: var(--gray-light);
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+}
+
+.bestgearSection > * {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.bestgearText h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.4rem;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.bestgearText span {
+  color: var(--orange);
+}
+
+.bestgearText p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  color: black;
+  opacity: 0.5;
+  margin-top: 3.2rem;
+}
+
+.bestgearSection img {
+  border-radius: 0.8rem;
+  min-width: 0;
+}

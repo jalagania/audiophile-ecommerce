@@ -22,6 +22,10 @@ footer nav {
 
 .textWrapper {
   margin: 3.5rem auto 0 auto;
+
+  display: grid;
+  grid-template-columns: 54rem 1fr;
+  align-items: end;
 }
 
 .textWrapper p {
@@ -30,19 +34,13 @@ footer nav {
   opacity: 0.5;
 }
 
-.descriptionBox {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
 .description {
-  width: 56rem;
   font-weight: 500;
   line-height: 2.5rem;
 }
 
 .socialIcons {
+  justify-content: end;
   display: flex;
   align-items: center;
   gap: 1.6rem;
