@@ -1,0 +1,124 @@
+.container {
+  background-color: var(--gray-light);
+  padding: 0 2rem;
+}
+
+.productsSection {
+  max-width: 105rem;
+  margin: 16rem auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+  row-gap: 4.8rem;
+}
+
+.speakerOrange {
+  padding: 10rem 10rem 0 12rem;
+  background-color: var(--orange);
+  background-image: url("/public/assets/home/desktop/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-size: 83%;
+  background-position: -14rem -2rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: flex;
+  grid-column: 1 / -1;
+  gap: 13rem;
+}
+
+.speakerOrange img {
+  min-width: 0;
+  width: 45%;
+  margin-bottom: -1rem;
+}
+
+.speakerOrange .textBox {
+  width: 45%;
+}
+
+.speakerOrange h2 {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 5.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.speakerOrange p {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  color: white;
+  opacity: 0.75;
+  margin: 2.4rem 0 4rem 0;
+}
+
+.speakerGray {
+  overflow: hidden;
+  grid-column: 1 / -1;
+  position: relative;
+}
+
+.speakerOrange button,
+.speakerGray button,
+.earphoneText button {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+}
+
+.speakerOrange button {
+  color: white;
+  background-color: black;
+}
+
+.speakerGray img {
+  border-radius: 0.8rem;
+}
+
+.speakerGray .textBox {
+  position: absolute;
+  left: 10rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.speakerGray h3 {
+  font-size: 2.8rem;
+  line-height: 3.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.speakerGray button,
+.earphoneText button {
+  color: black;
+  border: 1px solid black;
+  margin-top: 3.2rem;
+}
+
+.earphoneImg {
+  overflow: hidden;
+}
+
+.earphoneImg img {
+  border-radius: 0.8rem;
+}
+
+.earphoneText {
+  padding: 9rem;
+  background-color: var(--gray);
+  border-radius: 0.8rem;
+}
+
+.earphoneText h3 {
+  font-size: 2.8rem;
+  line-height: 3.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: black;
+}
