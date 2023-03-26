@@ -1,18 +1,23 @@
 import CategoryPage from "./components/CategoryPage";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SharedLayout from "./components/SharedLayout";
 
 function App() {
   return (
-    <div>
-      <Header />
-      {/* <HomePage /> */}
-      <CategoryPage name="headphones" />
-      {/* <CategoryPage name="speakers" /> */}
-      {/* <CategoryPage name="earphones" /> */}
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="headphones"
+            element={<CategoryPage name="headphones" />}
+          />
+          <Route path="speakers" element={<CategoryPage name="speakers" />} />
+          <Route path="earphones" element={<CategoryPage name="earphones" />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

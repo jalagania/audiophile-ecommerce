@@ -1,4 +1,5 @@
 import styles from "./Navigation.module.css";
+import { NavLink } from "react-router-dom";
 
 function Navigation({ location }) {
   return (
@@ -17,16 +18,16 @@ function Navigation({ location }) {
       />
       <ul className={styles.navLinks}>
         <li>
-          <button>Home</button>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <button>Headphones</button>
+          <NavLink to="headphones">Headphones</NavLink>
         </li>
         <li>
-          <button>Speakers</button>
+          <NavLink to="/speakers">Speakers</NavLink>
         </li>
         <li>
-          <button>Earphones</button>
+          <NavLink to="earphones">Earphones</NavLink>
         </li>
       </ul>
       {location === "header" && (

@@ -1,0 +1,133 @@
+.product {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+}
+
+.product:nth-child(even) .productImg {
+  order: 1;
+}
+
+.productImg {
+  min-width: 0;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.productText {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.productText h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.9rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  color: var(--orange);
+  opacity: 0.5;
+}
+
+.productText h2 {
+  font-size: 5rem;
+  line-height: 5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: black;
+  margin: 2.4rem 0;
+}
+
+.productText > p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  color: black;
+  opacity: 0.5;
+}
+
+.productText > button {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+  color: white;
+  background-color: var(--orange);
+  margin-top: 4rem;
+  transition: all 0.2s;
+}
+
+.cartElements {
+  margin-top: 4rem;
+}
+
+.productPrice {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.cartButtons {
+  margin-top: 4.5rem;
+  display: flex;
+  gap: 1.6rem;
+}
+
+.itemAmount {
+  background-color: var(--gray);
+  display: flex;
+  align-items: center;
+}
+
+.itemAmount button {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.25);
+  padding: 1.5rem;
+  background-color: var(--gray);
+  transition: all 0.2s;
+}
+
+.itemAmount p {
+  padding: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.addCart {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+  background-color: var(--orange);
+  padding: 1.5rem 3rem;
+  transition: all 0.2s;
+}
+
+@media (hover: hover) {
+  .productText > button:hover {
+    background-color: var(--orange-hover);
+  }
+
+  .itemAmount button:hover {
+    color: var(--orange);
+  }
+
+  .addCart:hover {
+    background-color: var(--orange-hover);
+  }
+}

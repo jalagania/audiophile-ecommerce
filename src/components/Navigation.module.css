@@ -18,7 +18,7 @@ nav {
   gap: 3.4rem;
 }
 
-.navLinks button {
+.navLinks li {
   font-size: 1.3rem;
   font-weight: 700;
   color: white;
@@ -34,7 +34,7 @@ nav {
 }
 
 @media (hover: hover) {
-  .navLinks button:hover {
+  .navLinks li:hover {
     color: var(--orange);
   }
 

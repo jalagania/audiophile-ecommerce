@@ -2,6 +2,7 @@ import styles from "./CategoryPage.module.css";
 import BestgearSection from "./BestgearSection";
 import ThumbnailsSection from "./ThumbnailsSection";
 import { useSelector } from "react-redux";
+import Product from "./Product";
 
 function CategoryPage(props) {
   const { data } = useSelector((store) => store.data);
@@ -25,19 +26,12 @@ function CategoryPage(props) {
       <main>
         <section className={styles.productsSection}>
           {products.map((product) => (
-            <article key={product.id} className={styles.product}>
-              <img
-                src={product.categoryImage[location]}
-                alt={props.name}
-                className={styles.productImg}
-              />
-              <div className={styles.productText}>
-                {product.new && <h4>New product</h4>}
-                <h2>{product.name}</h2>
-                <p>{product.description}</p>
-                <button>See product</button>
-              </div>
-            </article>
+            <Product
+              key={product.id}
+              page="category"
+              product={product}
+              location={location}
+            />
           ))}
         </section>
         <ThumbnailsSection />
