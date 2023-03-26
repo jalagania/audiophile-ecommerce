@@ -1,0 +1,21 @@
+.pageBanner {
+  padding: 10rem 0;
+  background-color: black;
+}
+
+.pageBanner h1 {
+  font-size: 4rem;
+  line-height: 4.4rem;
+  text-align: center;
+  letter-spacing: 1.4rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+.categoryPage main {
+  background-color: var(--gray-light);
+  padding: 16rem 2rem 0 2rem;
+}
+
+.productsSection {
+}
