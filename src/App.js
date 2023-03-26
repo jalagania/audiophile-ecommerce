@@ -9,6 +9,8 @@ function App() {
       <Header />
       {/* <HomePage /> */}
       <CategoryPage name="headphones" />
+      {/* <CategoryPage name="speakers" /> */}
+      {/* <CategoryPage name="earphones" /> */}
       <Footer />
     </div>
   );
