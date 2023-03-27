@@ -1,10 +1,21 @@
+import { useDispatch } from "react-redux";
+import { dataSlice } from "../store/dataSlice";
 import styles from "./Product.module.css";
 
 function Product({ page, product, location }) {
+  const dispatch = useDispatch();
+  const { setSelectedProduct } = dataSlice.actions;
+
+  const imageType = page === "product" ? "image" : "categoryImage";
+
+  function handleSeeProduct() {
+    dispatch(setSelectedProduct(product));
+  }
+
   return (
-    <article className={styles.product}>
+    <section className={styles.product}>
       <img
-        src={product.categoryImage[location]}
+        src={product[imageType][location]}
         alt={product.category}
         className={styles.productImg}
       />
@@ -12,7 +23,9 @@ function Product({ page, product, location }) {
         {product.new && <h4>New product</h4>}
         <h2>{product.name}</h2>
         <p>{product.description}</p>
-        {page === "category" && <button>See product</button>}
+        {page === "category" && (
+          <button onClick={handleSeeProduct}>See product</button>
+        )}
         {page === "product" && (
           <div className={styles.cartElements}>
             <p className={styles.productPrice}>
@@ -29,7 +42,7 @@ function Product({ page, product, location }) {
           </div>
         )}
       </div>
-    </article>
+    </section>
   );
 }
 

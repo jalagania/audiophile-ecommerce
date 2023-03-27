@@ -24,18 +24,20 @@ function CategoryPage(props) {
         <h1>{props.name}</h1>
       </div>
       <main>
-        <section className={styles.productsSection}>
-          {products.map((product) => (
-            <Product
-              key={product.id}
-              page="category"
-              product={product}
-              location={location}
-            />
-          ))}
-        </section>
-        <ThumbnailsSection />
-        <BestgearSection />
+        <div className={styles.sectionsWrapper}>
+          <section className={styles.productsSection}>
+            {products.map((product) => (
+              <Product
+                key={product.id}
+                page="category"
+                product={product}
+                location={location}
+              />
+            ))}
+          </section>
+          <ThumbnailsSection />
+          <BestgearSection />
+        </div>
       </main>
     </div>
   );

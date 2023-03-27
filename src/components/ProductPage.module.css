@@ -1,0 +1,121 @@
+.container {
+  background-color: var(--gray-light);
+  padding: 8rem 2rem 0 2rem;
+}
+
+.sectionsWrapper {
+  max-width: 105rem;
+  margin: 0 auto;
+}
+
+.sectionsWrapper h3 {
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 3.2rem;
+}
+
+.btnGoBack {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  color: black;
+  opacity: 0.5;
+  margin-bottom: 5.6rem;
+  transition: all 0.2s;
+}
+
+.productInfoBox {
+  margin-top: 16rem;
+  display: flex;
+  gap: 10rem;
+}
+
+.features {
+  width: 60%;
+}
+
+.productInfoBox p,
+.productInfoBox li {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  color: rgba(0, 0, 0, 0.5);
+  white-space: pre-line;
+}
+
+.inBox li {
+  line-height: 3.5rem;
+}
+
+.inBox span:first-child {
+  color: var(--orange);
+  margin-right: 2rem;
+}
+
+.productGallery {
+  margin-top: 16rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+}
+
+.productGallery img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.productGallery img:last-child {
+  grid-area: 1 / 2 / 3 / -1;
+}
+
+.youMayLike {
+  margin-top: 16rem;
+  text-align: center;
+}
+
+.productGallery img,
+.youMayLike img {
+  border-radius: 0.8rem;
+}
+
+.otherProducts {
+  margin: 6.4rem 0;
+  display: flex;
+  gap: 3rem;
+}
+
+.product h4 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3.3rem;
+  text-align: center;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  color: black;
+  margin: 4rem 0 3.2rem 0;
+}
+
+.product button {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+  color: white;
+  background-color: var(--orange);
+  transition: all 0.2s;
+}
+
+@media (hover: hover) {
+  .btnGoBack:hover {
+    color: var(--orange);
+  }
+
+  .product button:hover {
+    background-color: var(--orange-hover);
+  }
+}

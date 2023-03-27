@@ -4,10 +4,6 @@
   gap: 10rem;
 }
 
-.product:nth-child(even) .productImg {
-  order: 1;
-}
-
 .productImg {
   min-width: 0;
   flex-basis: 0;
@@ -30,7 +26,7 @@
 }
 
 .productText h2 {
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 5rem;
   letter-spacing: 2px;
   text-transform: uppercase;

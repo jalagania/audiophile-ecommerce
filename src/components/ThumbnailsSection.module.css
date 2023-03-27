@@ -1,6 +1,4 @@
 .thumbnailsSection {
-  max-width: 105rem;
-  margin: 0 auto;
   padding-top: 16rem;
   background-color: var(--gray-light);
   display: flex;

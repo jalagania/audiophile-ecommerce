@@ -17,10 +17,18 @@
   padding: 16rem 2rem 0 2rem;
 }
 
-.productsSection {
+.sectionsWrapper {
   max-width: 105rem;
-  margin: 0 auto 8rem auto;
+  margin: 0 auto;
+}
+
+.productsSection {
+  margin-bottom: 8rem;
   display: flex;
   flex-direction: column;
   gap: 16rem;
+}
+
+.productsSection section:nth-child(even) > img {
+  order: 1;
 }

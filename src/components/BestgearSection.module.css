@@ -1,6 +1,4 @@
 .bestgearSection {
-  max-width: 105rem;
-  margin: 0 auto;
   padding: 20rem 0;
   background-color: var(--gray-light);
   display: flex;
