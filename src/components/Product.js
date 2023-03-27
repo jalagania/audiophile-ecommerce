@@ -13,7 +13,7 @@ function Product({ page, product, location }) {
   }
 
   return (
-    <section className={styles.product}>
+    <article className={styles.product}>
       <img
         src={product[imageType][location]}
         alt={product.category}
@@ -42,7 +42,7 @@ function Product({ page, product, location }) {
           </div>
         )}
       </div>
-    </section>
+    </article>
   );
 }
 

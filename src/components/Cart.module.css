@@ -1,0 +1,135 @@
+.cartContainer {
+  width: 38rem;
+  padding: 3.2rem;
+  background-color: white;
+  border-radius: 0.8rem;
+}
+
+.cartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.btnRemove {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  text-decoration-line: underline;
+  color: black;
+  opacity: 0.5;
+  transition: all 0.2s;
+}
+
+.cartBody {
+  margin: 3.2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.cartBody img {
+  border-radius: 0.8rem;
+}
+
+.itemName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  color: black;
+}
+
+.itemPrice {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  color: black;
+  opacity: 0.5;
+}
+
+.amountButtons {
+  margin-left: auto;
+  background-color: var(--gray);
+  display: flex;
+  align-items: center;
+}
+
+.amountButtons button,
+.amountButtons p {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1.5rem;
+}
+
+.amountButtons button {
+  color: rgba(0, 0, 0, 0.25);
+  background-color: var(--gray);
+  transition: all 0.2s;
+}
+
+.amountButtons p {
+  color: black;
+}
+
+.cartFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.totalText {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  color: black;
+  opacity: 0.5;
+}
+
+.totalPrice {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  color: black;
+}
+
+.btnCheckout {
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+  color: white;
+  background-color: var(--orange);
+  margin-top: 4rem;
+  transition: all 0.2s;
+}
+
+@media (hover: hover) {
+  .btnRemove:hover {
+    color: var(--orange);
+  }
+
+  .amountButtons button:hover {
+    color: var(--orange);
+  }
+
+  .btnCheckout:hover {
+    background-color: var(--orange-hover);
+  }
+}
