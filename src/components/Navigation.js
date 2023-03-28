@@ -1,7 +1,13 @@
 import styles from "./Navigation.module.css";
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { cartSlice } from "../store/cartSlice";
 
 function Navigation({ location }) {
+  const dispatch = useDispatch();
+  const { setCartIsVisible } = cartSlice.actions;
+  const { cartIsVisible } = useSelector((store) => store.cart);
+
   return (
     <nav>
       <img
@@ -31,7 +37,10 @@ function Navigation({ location }) {
         </li>
       </ul>
       {location === "header" && (
-        <button className={styles.cartIcon}>
+        <button
+          className={styles.cartIcon}
+          onClick={() => dispatch(setCartIsVisible(!cartIsVisible))}
+        >
           <img
             src={
               process.env.PUBLIC_URL + "/assets/shared/desktop/icon-cart.svg"

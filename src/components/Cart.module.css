@@ -3,6 +3,9 @@
   padding: 3.2rem;
   background-color: white;
   border-radius: 0.8rem;
+  margin-left: auto;
+  position: relative;
+  z-index: 10;
 }
 
 .cartHeader {
@@ -83,13 +86,28 @@
   color: black;
 }
 
-.cartFooter {
+.itemAmount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  color: black;
+  opacity: 0.5;
+  margin-left: auto;
+}
+
+.totalBox,
+.shippingBox,
+.vatBox,
+.grandTotalBox {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.totalText {
+.totalText,
+.shippingText,
+.vatText,
+.grandTotalText {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 2.5rem;
@@ -98,12 +116,19 @@
   opacity: 0.5;
 }
 
-.totalPrice {
+.totalPrice,
+.shippingPrice,
+.vatPrice,
+.grandTotalPrice {
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 2.5rem;
   text-transform: uppercase;
   color: black;
+}
+
+.grandTotalPrice {
+  color: var(--orange);
 }
 
 .btnCheckout {

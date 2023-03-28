@@ -1,0 +1,21 @@
+.container,
+.modalBg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.modalWrapper {
+  max-width: 105rem;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 12.8rem 2rem;
+}
+
+.modalBg {
+  background-color: rgba(0, 0, 0, 0.6);
+}

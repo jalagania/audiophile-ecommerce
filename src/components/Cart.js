@@ -1,12 +1,15 @@
 import styles from "./Cart.module.css";
 
 function Cart(props) {
-  // props.location
+  const modal = props.page === "modal";
+  const title = modal ? "Cart" : "Summary";
+  const buttonName = modal ? "Check Out" : "Continue";
+
   return (
     <div className={styles.cartContainer}>
       <div className={styles.cartHeader}>
-        <p className={styles.cartTitle}>Cart</p>
-        <button className={styles.btnRemove}>Remove All</button>
+        <p className={styles.cartTitle}>{title}</p>
+        {modal && <button className={styles.btnRemove}>Remove All</button>}
       </div>
       <div className={styles.cartBody}>
         <img src="" alt="" />
@@ -14,17 +17,38 @@ function Cart(props) {
           <p className={styles.itemName}>Name</p>
           <p className={styles.itemPrice}>$900</p>
         </div>
-        <div className={styles.amountButtons}>
-          <button>-</button>
-          <p>1</p>
-          <button>+</button>
-        </div>
+        {modal && (
+          <div className={styles.amountButtons}>
+            <button>-</button>
+            <p>1</p>
+            <button>+</button>
+          </div>
+        )}
+        {!modal && <p className={styles.itemAmount}>x{}</p>}
       </div>
       <div className={styles.cartFooter}>
-        <p className={styles.totalText}>Total</p>
-        <p className={styles.totalPrice}>$900</p>
+        <div className={styles.totalBox}>
+          <p className={styles.totalText}>Total</p>
+          <p className={styles.totalPrice}>$900</p>
+        </div>
+        {!modal && (
+          <div className={styles.sumamryBox}>
+            <div className={styles.shippingBox}>
+              <p className={styles.shippingText}>Shipping</p>
+              <p className={styles.shippingPrice}>$900</p>
+            </div>
+            <div className={styles.vatBox}>
+              <p className={styles.vatText}>Vat(Included)</p>
+              <p className={styles.vatPrice}>$900</p>
+            </div>
+            <div className={styles.grandTotalBox}>
+              <p className={styles.grandTotalText}>Grand Total</p>
+              <p className={styles.grandTotalPrice}>$900</p>
+            </div>
+          </div>
+        )}
+        <button className={styles.btnCheckout}>{buttonName}</button>
       </div>
-      <button className={styles.btnCheckout}>Check Out</button>
     </div>
   );
 }
