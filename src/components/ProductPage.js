@@ -3,9 +3,15 @@ import BestgearSection from "./BestgearSection";
 import Product from "./Product";
 import ThumbnailsSection from "./ThumbnailsSection";
 import { useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 
 function ProductPage() {
-  const { selectedProduct } = useSelector((store) => store.data);
+  // const { selectedProduct } = useSelector((store) => store.data);
+  const { data } = useSelector((store) => store.data);
+  const { id: productID } = useParams();
+  const [selectedProduct] = data.filter(
+    (product) => product.slug === productID
+  );
 
   let location = "desktop";
   if (window.innerWidth <= 768) {
@@ -14,8 +20,7 @@ function ProductPage() {
   if (window.innerWidth <= 425) {
     location = "mobile";
   }
-
-  if (!selectedProduct) return;
+  console.log(selectedProduct);
 
   return (
     <div className={styles.container}>
@@ -63,7 +68,7 @@ function ProductPage() {
                   alt={selectedProduct.category}
                 />
                 <h4>{item.name}</h4>
-                <button>See Product</button>
+                <Link to={`/${item.category}/${item.slug}`}>See Product</Link>
               </div>
             ))}
           </div>

@@ -1,9 +1,22 @@
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { cartSlice } from "../store/cartSlice";
 import styles from "./Cart.module.css";
 
 function Cart(props) {
+  const dispatch = useDispatch();
+  const { setCartIsVisible } = cartSlice.actions;
+  const navigate = useNavigate();
   const modal = props.page === "modal";
   const title = modal ? "Cart" : "Summary";
   const buttonName = modal ? "Check Out" : "Continue & Pay";
+
+  function handleCartButton() {
+    if (modal) {
+      navigate("checkout");
+      dispatch(setCartIsVisible(false));
+    }
+  }
 
   return (
     <div className={styles.cartContainer}>
@@ -47,7 +60,9 @@ function Cart(props) {
             </div>
           </div>
         )}
-        <button className={styles.btnCheckout}>{buttonName}</button>
+        <button className={styles.btnCheckout} onClick={handleCartButton}>
+          {buttonName}
+        </button>
       </div>
     </div>
   );

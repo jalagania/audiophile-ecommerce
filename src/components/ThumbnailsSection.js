@@ -1,13 +1,23 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./ThumbnailsSection.module.css";
 
 function ThumbnailsSection() {
+  const navigate = useNavigate();
+
+  function handleShopBox(category) {
+    navigate("/" + category);
+  }
+
   return (
     <section className={styles.thumbnailsSection}>
-      <div className={styles.thumbnailBox}>
+      <div
+        className={styles.thumbnailBox}
+        onClick={() => handleShopBox("headphones")}
+      >
         <img
           src={
             process.env.PUBLIC_URL +
-            "./assets/shared/desktop/image-category-thumbnail-headphones.png"
+            "/assets/shared/desktop/image-category-thumbnail-headphones.png"
           }
           alt="product thumbnail"
         />
@@ -25,11 +35,14 @@ function ThumbnailsSection() {
           </svg>
         </button>
       </div>
-      <div className={styles.thumbnailBox}>
+      <div
+        className={styles.thumbnailBox}
+        onClick={() => handleShopBox("speakers")}
+      >
         <img
           src={
             process.env.PUBLIC_URL +
-            "./assets/shared/desktop/image-category-thumbnail-speakers.png"
+            "/assets/shared/desktop/image-category-thumbnail-speakers.png"
           }
           alt="product thumbnail"
         />
@@ -47,11 +60,14 @@ function ThumbnailsSection() {
           </svg>
         </button>
       </div>
-      <div className={styles.thumbnailBox}>
+      <div
+        className={styles.thumbnailBox}
+        onClick={() => handleShopBox("earphones")}
+      >
         <img
           src={
             process.env.PUBLIC_URL +
-            "./assets/shared/desktop/image-category-thumbnail-earphones.png"
+            "/assets/shared/desktop/image-category-thumbnail-earphones.png"
           }
           alt="product thumbnail"
         />

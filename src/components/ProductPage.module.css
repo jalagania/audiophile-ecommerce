@@ -98,7 +98,8 @@
   margin: 4rem 0 3.2rem 0;
 }
 
-.product button {
+.product a {
+  display: inline-block;
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.8rem;
@@ -115,7 +116,7 @@
     color: var(--orange);
   }
 
-  .product button:hover {
+  .product a:hover {
     background-color: var(--orange-hover);
   }
 }

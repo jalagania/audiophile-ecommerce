@@ -43,7 +43,8 @@
   opacity: 0.5;
 }
 
-.productText > button {
+.productText > a {
+  display: inline-block;
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.8rem;
@@ -116,7 +117,7 @@
 }
 
 @media (hover: hover) {
-  .productText > button:hover {
+  .productText > a:hover {
     background-color: var(--orange-hover);
   }
 

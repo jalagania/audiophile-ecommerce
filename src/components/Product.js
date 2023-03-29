@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { dataSlice } from "../store/dataSlice";
 import styles from "./Product.module.css";
 
@@ -24,7 +25,9 @@ function Product({ page, product, location }) {
         <h2>{product.name}</h2>
         <p>{product.description}</p>
         {page === "category" && (
-          <button onClick={handleSeeProduct}>See product</button>
+          <Link to={`${product.slug}`} onClick={handleSeeProduct}>
+            See product
+          </Link>
         )}
         {page === "product" && (
           <div className={styles.cartElements}>

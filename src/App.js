@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import ConfirmationModal from "./components/ConfirmationModal";
 import CheckoutPage from "./components/CheckoutPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const { cartIsVisible } = useSelector((store) => store.cart);
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route path="/" element={<HomePage />} />
@@ -29,7 +31,9 @@ function App() {
           />
           <Route path="speakers" element={<CategoryPage name="speakers" />} />
           <Route path="earphones" element={<CategoryPage name="earphones" />} />
-          <Route path="bla" element={<ProductPage />} />
+          <Route path="headphones/:id" element={<ProductPage />} />
+          <Route path="speakers/:id" element={<ProductPage />} />
+          <Route path="earphones/:id" element={<ProductPage />} />
           <Route path="checkout" element={<CheckoutPage />} />
         </Route>
       </Routes>

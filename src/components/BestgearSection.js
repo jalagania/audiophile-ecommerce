@@ -27,7 +27,7 @@ function BestgearSection() {
       <img
         src={
           process.env.PUBLIC_URL +
-          `./assets/shared/${location}/image-best-gear.jpg`
+          `/assets/shared/${location}/image-best-gear.jpg`
         }
         alt="man with headphones"
       />
