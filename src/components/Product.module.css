@@ -5,6 +5,7 @@
 }
 
 .productImg {
+  border-radius: 0.8rem;
   min-width: 0;
   flex-basis: 0;
   flex-grow: 1;

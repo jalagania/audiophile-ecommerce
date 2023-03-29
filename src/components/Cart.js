@@ -3,7 +3,7 @@ import styles from "./Cart.module.css";
 function Cart(props) {
   const modal = props.page === "modal";
   const title = modal ? "Cart" : "Summary";
-  const buttonName = modal ? "Check Out" : "Continue";
+  const buttonName = modal ? "Check Out" : "Continue & Pay";
 
   return (
     <div className={styles.cartContainer}>

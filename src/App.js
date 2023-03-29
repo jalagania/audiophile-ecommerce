@@ -7,6 +7,7 @@ import CartModal from "./components/CartModal";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import ConfirmationModal from "./components/ConfirmationModal";
+import CheckoutPage from "./components/CheckoutPage";
 
 function App() {
   const { cartIsVisible } = useSelector((store) => store.cart);
@@ -29,6 +30,7 @@ function App() {
           <Route path="speakers" element={<CategoryPage name="speakers" />} />
           <Route path="earphones" element={<CategoryPage name="earphones" />} />
           <Route path="bla" element={<ProductPage />} />
+          <Route path="checkout" element={<CheckoutPage />} />
         </Route>
       </Routes>
       {cartIsVisible && <CartModal />}

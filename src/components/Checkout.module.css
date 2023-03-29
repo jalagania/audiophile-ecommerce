@@ -1,0 +1,173 @@
+.container {
+  padding: 8rem 2rem 14rem 2rem;
+  background-color: var(--gray-light);
+}
+
+.pageWrapper {
+  max-width: 105rem;
+  margin: 0 auto;
+}
+
+.btnBack {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  color: black;
+  margin-bottom: 3.8rem;
+  transition: all 0.2s;
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.checkoutBox {
+  padding: 5.4rem 4.8rem;
+  background-color: white;
+  border-radius: 0.8rem;
+  flex-grow: 1;
+}
+
+.checkoutBox h1 {
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 4rem;
+}
+
+.checkoutBox h4 {
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1.6rem;
+}
+
+.checkoutBox label span,
+.methodBox > p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+  letter-spacing: -0.2x;
+  color: black;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.checkoutBox input {
+  width: 100%;
+  padding: 1.8rem 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+  letter-spacing: -0.25px;
+  color: black;
+  border: 1px solid #cfcfcf;
+  border-radius: 0.8rem;
+  outline: none;
+  caret-color: var(--orange);
+}
+
+.checkoutBox input:focus {
+  border: 1px solid var(--orange);
+}
+
+.billingBox,
+.shippingBox {
+  margin-bottom: 5rem;
+}
+
+.billingLabels,
+.shippingLabels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1.6rem;
+  row-gap: 2.4rem;
+}
+
+.shippingLabels label:first-child {
+  grid-column: 1 / -1;
+}
+
+.methodBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.6rem;
+  row-gap: 1.6rem;
+}
+
+.methodBox > div {
+  padding: 1.8rem 2.4rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.8rem;
+  grid-column: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.methodBox > div .circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--input-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.methodBox > div .dot {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--orange);
+  border-radius: 50%;
+}
+
+.methodBox > div p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+  letter-spacing: -0.25px;
+  color: black;
+}
+
+.moneyBox,
+.cashBox {
+  margin-top: 3rem;
+}
+
+.moneyBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.6rem;
+}
+
+.cashBox {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.cashBox p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  color: black;
+  opacity: 0.5;
+}
+
+@media (hover: hover) {
+  .btnBack:hover {
+    color: var(--orange);
+  }
+
+  .methodBox > div:hover {
+    border: 1px solid var(--orange);
+  }
+}

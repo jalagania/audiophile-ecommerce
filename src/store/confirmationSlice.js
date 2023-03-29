@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const confirmationSlice = createSlice({
   name: "confirmation",
   initialState: {
-    confirmationIsVisible: true,
+    confirmationIsVisible: false,
   },
   reducers: {
     setConfirmationIsVisible: (state, action) => {
