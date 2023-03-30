@@ -3,10 +3,10 @@ import BestgearSection from "./BestgearSection";
 import Product from "./Product";
 import ThumbnailsSection from "./ThumbnailsSection";
 import { useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 function ProductPage() {
-  // const { selectedProduct } = useSelector((store) => store.data);
+  const navigate = useNavigate();
   const { data } = useSelector((store) => store.data);
   const { id: productID } = useParams();
   const [selectedProduct] = data.filter(
@@ -24,7 +24,9 @@ function ProductPage() {
   return (
     <div className={styles.container}>
       <div className={styles.sectionsWrapper}>
-        <button className={styles.btnGoBack}>Go Back</button>
+        <button className={styles.btnGoBack} onClick={() => navigate(-1)}>
+          Go Back
+        </button>
         <Product page="product" product={selectedProduct} location={location} />
         <section className={styles.productInfoBox}>
           <div className={styles.features}>

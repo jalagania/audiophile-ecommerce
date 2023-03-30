@@ -1,14 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Cart from "./Cart";
 import styles from "./Checkout.module.css";
 
 function CheckoutPage() {
+  const navigate = useNavigate();
   const [cashSelected, setCashSelected] = useState(false);
 
   return (
     <div className={styles.container}>
       <div className={styles.pageWrapper}>
-        <button className={styles.btnBack}>Go Back</button>
+        <button className={styles.btnBack} onClick={() => navigate(-1)}>
+          Go Back
+        </button>
         <div className={styles.wrapper}>
           <div className={styles.checkoutBox}>
             <h1>Checkout</h1>
