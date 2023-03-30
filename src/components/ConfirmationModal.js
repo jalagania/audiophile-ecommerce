@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { confirmationSlice } from "../store/confirmationSlice";
 import { useNavigate } from "react-router-dom";
 import { cartSlice } from "../store/cartSlice";
+import { useState } from "react";
 
 function ConfirmationModal() {
   const dispatch = useDispatch();
@@ -16,6 +17,20 @@ function ConfirmationModal() {
     0
   );
   const grandTotal = totalCost + 50;
+
+  const [modifiedItems, setModifiedItems] = useState([cartItems[0]]);
+  const viewLesttText =
+    modifiedItems.length === 1
+      ? `and ${cartItems.length - 1} other item(s)`
+      : "View Less";
+
+  function handleViewLess() {
+    if (modifiedItems.length === 1) {
+      setModifiedItems(cartItems);
+    } else {
+      setModifiedItems([cartItems[0]]);
+    }
+  }
 
   function handleGoBackHome() {
     dispatch(setConfirmationIsVisible(false));
@@ -38,20 +53,25 @@ function ConfirmationModal() {
           You will receive an email confirmation shortly.
         </p>
         <div className={styles.ordersBox}>
-          <ul className={styles.orderList}>
-            {cartItems.map((item) => (
-              <li key={item.id}>
-                <img src={item.image} alt={item.name} />
-                <div className={styles.itemInfo}>
-                  <p className={styles.itemName}>{item.name}</p>
-                  <p className={styles.itemPrice}>
-                    $ {item.price.toLocaleString()}
-                  </p>
-                </div>
-                <p className={styles.itemAmount}>x{item.amount}</p>
-              </li>
-            ))}
-          </ul>
+          <div className={styles.orderListWrapper}>
+            <ul className={styles.orderList}>
+              {modifiedItems.map((item) => (
+                <li key={item.id}>
+                  <img src={item.image} alt={item.name} />
+                  <div className={styles.itemInfo}>
+                    <p className={styles.itemName}>{item.name}</p>
+                    <p className={styles.itemPrice}>
+                      $ {item.price.toLocaleString()}
+                    </p>
+                  </div>
+                  <p className={styles.itemAmount}>x{item.amount}</p>
+                </li>
+              ))}
+            </ul>
+            <button className={styles.btnShowLess} onClick={handleViewLess}>
+              {viewLesttText}
+            </button>
+          </div>
           <div className={styles.totalCostBox}>
             <p className={styles.totalText}>Grand Total</p>
             <p className={styles.totalAmount}>

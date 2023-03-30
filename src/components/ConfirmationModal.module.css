@@ -48,21 +48,24 @@
 
 .ordersBox {
   margin: 3.4rem 0 4.8rem 0;
+  display: flex;
+}
+
+.orderListWrapper {
+  padding: 2.4rem;
   background: var(--gray);
   border-radius: 0.8rem 0 0 0.8rem;
-  display: flex;
-  gap: 0.5rem;
+  flex-grow: 1;
 }
 
 .orderList {
-  max-height: 20rem;
-  padding: 2.4rem;
+  max-height: 10rem;
+  padding-right: 0.5rem;
   background: var(--gray);
   border-radius: 0.8rem 0 0 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  flex-grow: 1;
   overflow-y: auto;
 }
 
@@ -83,6 +86,18 @@
   display: flex;
   align-items: flex-start;
   gap: 1.6rem;
+}
+
+.btnShowLess {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+  letter-spacing: -0.2px;
+  color: rgba(0, 0, 0, 0.5);
+  padding-top: 1.2rem;
+  margin-top: 1.6rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .orderList li img {
