@@ -46,23 +46,26 @@
 }
 
 .cartBody {
-  max-height: 22rem;
   margin: 3.2rem 0;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+}
+
+.cartBody.modal {
+  max-height: 22rem;
   overflow-y: auto;
 }
 
-.cartBody::-webkit-scrollbar {
+.cartBody.modal::-webkit-scrollbar {
   width: 0.5rem;
 }
 
-.cartBody::-webkit-scrollbar-track {
+.cartBody.modal::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.cartBody::-webkit-scrollbar-thumb {
+.cartBody.modal::-webkit-scrollbar-thumb {
   background: var(--orange);
   border-radius: 5rem;
 }

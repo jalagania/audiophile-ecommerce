@@ -62,7 +62,7 @@ function Cart(props) {
           </button>
         )}
       </div>
-      <div className={styles.cartBody}>
+      <div className={`${styles.cartBody} ${modal && styles.modal}`}>
         {cartItems.map((item) => (
           <div key={item.id} className={styles.itemBox}>
             <img src={item.image} alt={item.name} />
