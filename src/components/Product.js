@@ -1,16 +1,42 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { dataSlice } from "../store/dataSlice";
+import { cartSlice } from "../store/cartSlice";
 import styles from "./Product.module.css";
 
 function Product({ page, product, location }) {
   const dispatch = useDispatch();
-  const { setSelectedProduct } = dataSlice.actions;
+  const { setCartItems } = cartSlice.actions;
 
   const imageType = page === "product" ? "image" : "categoryImage";
+  const [itemAmount, setItemAmount] = useState(1);
+
+  function handleDeductItem() {
+    if (itemAmount > 1) {
+      setItemAmount(itemAmount - 1);
+    }
+  }
+
+  function handleAddItem() {
+    if (itemAmount < 5) {
+      setItemAmount(itemAmount + 1);
+    }
+  }
 
   function handleSeeProduct() {
-    dispatch(setSelectedProduct(product));
+    // dispatch(setSelectedProduct(product));
+  }
+
+  function handleAddToCart() {
+    const item = {
+      id: product.id,
+      name: product.nameCart,
+      amount: itemAmount,
+      price: product.price,
+      image: `/assets/cart/image-${product.slug}.jpg`,
+    };
+    dispatch(setCartItems(item));
+    setItemAmount(1);
   }
 
   return (
@@ -36,11 +62,13 @@ function Product({ page, product, location }) {
             </p>
             <div className={styles.cartButtons}>
               <div className={styles.itemAmount}>
-                <button>-</button>
-                <p>1</p>
-                <button>+</button>
+                <button onClick={handleDeductItem}>-</button>
+                <p>{itemAmount}</p>
+                <button onClick={handleAddItem}>+</button>
               </div>
-              <button className={styles.addCart}>Add To Cart</button>
+              <button className={styles.addCart} onClick={handleAddToCart}>
+                Add To Cart
+              </button>
             </div>
           </div>
         )}

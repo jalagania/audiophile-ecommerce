@@ -20,7 +20,6 @@ function ProductPage() {
   if (window.innerWidth <= 425) {
     location = "mobile";
   }
-  console.log(selectedProduct);
 
   return (
     <div className={styles.container}>

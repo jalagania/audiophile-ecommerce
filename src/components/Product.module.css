@@ -95,12 +95,12 @@
 }
 
 .itemAmount p {
-  padding: 1.5rem;
+  width: 3.8rem;
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.8rem;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-align: center;
   color: black;
 }
 

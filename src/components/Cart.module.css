@@ -24,25 +24,59 @@
   color: black;
 }
 
+.cartEmpty {
+  height: 15rem;
+}
+
+.cartEmpty p {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--orange);
+  padding-top: 6rem;
+}
+
 .btnRemove {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 2.5rem;
   text-decoration-line: underline;
-  color: black;
-  opacity: 0.5;
+  color: rgba(0, 0, 0, 0.5);
   transition: all 0.2s;
 }
 
 .cartBody {
+  max-height: 22rem;
   margin: 3.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  overflow-y: auto;
+}
+
+.cartBody::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.cartBody::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cartBody::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 5rem;
+}
+
+.itemBox {
+  padding-right: 0.5rem;
   display: flex;
   align-items: center;
   gap: 1.6rem;
 }
 
-.cartBody img {
+.itemBox img {
   border-radius: 0.8rem;
+  width: 6.4rem;
 }
 
 .itemName {
@@ -61,6 +95,7 @@
 }
 
 .amountButtons {
+  height: 3.4rem;
   margin-left: auto;
   background-color: var(--gray);
   display: flex;
@@ -74,7 +109,7 @@
   line-height: 1.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
 }
 
 .amountButtons button {
@@ -84,6 +119,9 @@
 }
 
 .amountButtons p {
+  width: 4rem;
+  padding: 0;
+  text-align: center;
   color: black;
 }
 

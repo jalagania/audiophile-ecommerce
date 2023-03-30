@@ -48,16 +48,44 @@
 
 .ordersBox {
   margin: 3.4rem 0 4.8rem 0;
+  background: var(--gray);
   display: flex;
+  gap: 0.5rem;
 }
 
 .orderList {
-  height: 20rem;
+  max-height: 20rem;
   padding: 2.4rem;
   background: var(--gray);
   border-radius: 0.8rem 0 0 0.8rem;
   display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
   flex-grow: 1;
+  overflow-y: auto;
+}
+
+.orderList::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.orderList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.orderList::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 5rem;
+}
+
+.orderList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+
+.orderList li img {
+  width: 5rem;
 }
 
 .itemName {
