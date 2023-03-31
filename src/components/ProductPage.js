@@ -4,6 +4,7 @@ import Product from "./Product";
 import ThumbnailsSection from "./ThumbnailsSection";
 import { useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import ErrorPage from "./ErrorPage";
 
 function ProductPage() {
   const navigate = useNavigate();
@@ -20,6 +21,8 @@ function ProductPage() {
   if (window.innerWidth <= 425) {
     location = "mobile";
   }
+
+  if (!selectedProduct) return <ErrorPage />;
 
   return (
     <div className={styles.container}>

@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import ConfirmationModal from "./components/ConfirmationModal";
 import CheckoutPage from "./components/CheckoutPage";
 import ScrollToTop from "./components/ScrollToTop";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   const { cartIsVisible } = useSelector((store) => store.cart);
@@ -35,6 +36,7 @@ function App() {
           <Route path="speakers/:id" element={<ProductPage />} />
           <Route path="earphones/:id" element={<ProductPage />} />
           <Route path="checkout" element={<CheckoutPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
       {cartIsVisible && <CartModal />}

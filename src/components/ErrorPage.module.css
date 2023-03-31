@@ -1,0 +1,35 @@
+.errorPage {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--gray);
+  z-index: 500;
+}
+
+.errorPage div {
+  margin-top: 15rem;
+  text-align: center;
+}
+
+.errorPage h1 {
+  font-size: 6rem;
+  color: var(--orange);
+}
+
+.errorPage h2 {
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 1.5rem;
+}
+
+.errorPage span {
+  font-size: 1.6rem;
+  color: black;
+}
+
+.errorPage a {
+  font-weight: 700;
+  color: var(--orange);
+}
