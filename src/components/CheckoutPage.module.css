@@ -55,8 +55,16 @@
   line-height: 1.6rem;
   letter-spacing: -0.2x;
   color: black;
+}
+
+.checkoutBox .spanWrapper {
   margin-bottom: 0.8rem;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkoutBox .spanWrapper span.error {
+  color: red;
 }
 
 .checkoutBox input {
@@ -99,6 +107,10 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 1.6rem;
   row-gap: 1.6rem;
+}
+
+.methodBox > p {
+  margin-bottom: 0.8rem;
 }
 
 .methodBox > div {

@@ -21,15 +21,24 @@ function CheckoutPage() {
                 <h4>Billing</h4>
                 <div className={styles.billingLabels}>
                   <label>
-                    <span>Name</span>
+                    <div className={styles.spanWrapper}>
+                      <span>Name</span>
+                      <span>Name Error</span>
+                    </div>
                     <input type="text" placeholder="Alexei Ward" />
                   </label>
                   <label>
-                    <span>Email Address</span>
+                    <div className={styles.spanWrapper}>
+                      <span>Email Address</span>
+                      <span>Email Error</span>
+                    </div>
                     <input type="email" placeholder="alexei@mail.com" />
                   </label>
                   <label>
-                    <span>Phone Number</span>
+                    <div className={styles.spanWrapper}>
+                      <span>Phone Number</span>
+                      <span>Phone Error</span>
+                    </div>
                     <input type="tel" placeholder="+1 202-555-0136" />
                   </label>
                 </div>
@@ -38,19 +47,31 @@ function CheckoutPage() {
                 <h4>Shipping Info</h4>
                 <div className={styles.shippingLabels}>
                   <label>
-                    <span>Address</span>
+                    <div className={styles.spanWrapper}>
+                      <span>Address</span>
+                      <span>Address Error</span>
+                    </div>
                     <input type="text" placeholder="1137 Williams Avenue" />
                   </label>
                   <label>
-                    <span>ZIP Code</span>
+                    <div className={styles.spanWrapper}>
+                      <span>ZIP Code</span>
+                      <span>ZIP Error</span>
+                    </div>
                     <input type="text" placeholder="10001" />
                   </label>
                   <label>
-                    <span>City</span>
+                    <div className={styles.spanWrapper}>
+                      <span>City</span>
+                      <span>City Error</span>
+                    </div>
                     <input type="text" placeholder="New York" />
                   </label>
                   <label>
-                    <span>Country</span>
+                    <div className={styles.spanWrapper}>
+                      <span>Country</span>
+                      <span>Country Error</span>
+                    </div>
                     <input type="text" placeholder="United States" />
                   </label>
                 </div>
