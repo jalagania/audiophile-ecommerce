@@ -23,10 +23,6 @@ function Product({ page, product, location }) {
     }
   }
 
-  function handleSeeProduct() {
-    // dispatch(setSelectedProduct(product));
-  }
-
   function handleAddToCart() {
     const item = {
       id: product.id,
@@ -50,11 +46,7 @@ function Product({ page, product, location }) {
         {product.new && <h4>New product</h4>}
         <h2>{product.name}</h2>
         <p>{product.description}</p>
-        {page === "category" && (
-          <Link to={`${product.slug}`} onClick={handleSeeProduct}>
-            See product
-          </Link>
-        )}
+        {page === "category" && <Link to={`${product.slug}`}>See product</Link>}
         {page === "product" && (
           <div className={styles.cartElements}>
             <p className={styles.productPrice}>

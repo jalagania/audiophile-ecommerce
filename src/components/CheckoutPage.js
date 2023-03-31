@@ -1,7 +1,7 @@
+import styles from "./CheckoutPage.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cart from "./Cart";
-import styles from "./Checkout.module.css";
 
 function CheckoutPage() {
   const navigate = useNavigate();

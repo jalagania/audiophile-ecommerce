@@ -9,7 +9,9 @@ function ConfirmationModal() {
   const dispatch = useDispatch();
   const { setConfirmationIsVisible } = confirmationSlice.actions;
   const { clearCart } = cartSlice.actions;
-  const { cartItems } = useSelector((store) => store.cart);
+  const cartItems = useSelector((store) =>
+    store.cart.cartItems.filter((item) => item.amount !== 0)
+  );
   const navigate = useNavigate();
 
   const totalCost = cartItems.reduce(
@@ -68,9 +70,11 @@ function ConfirmationModal() {
                 </li>
               ))}
             </ul>
-            <button className={styles.btnShowLess} onClick={handleViewLess}>
-              {viewLesttText}
-            </button>
+            {cartItems.length > 1 && (
+              <button className={styles.btnShowLess} onClick={handleViewLess}>
+                {viewLesttText}
+              </button>
+            )}
           </div>
           <div className={styles.totalCostBox}>
             <p className={styles.totalText}>Grand Total</p>

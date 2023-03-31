@@ -23,14 +23,19 @@ function Cart(props) {
     0
   );
   const vatCost = (totalCost * 20) / 100;
-  const grandTotal = totalCost + 50;
+  const grandTotal = totalCost === 0 ? 0 : totalCost + 50;
+  const filteredCartItems = modal
+    ? cartItems
+    : cartItems.filter((item) => item.amount !== 0);
 
   function handleCartButton() {
-    if (modal) {
-      navigate("checkout");
-      dispatch(setCartIsVisible(false));
-    } else {
-      dispatch(setConfirmationIsVisible(true));
+    if (totalCost) {
+      if (modal) {
+        navigate("checkout");
+        dispatch(setCartIsVisible(false));
+      } else {
+        dispatch(setConfirmationIsVisible(true));
+      }
     }
   }
 
@@ -42,6 +47,19 @@ function Cart(props) {
         </p>
         <div className={styles.cartEmpty}>
           <p>Cart is empty</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!modal && filteredCartItems.length === 0) {
+    return (
+      <div className={styles.cartContainer}>
+        <p className={styles.cartTitle}>
+          {title} {modal && `(${cartItems.length})`}
+        </p>
+        <div className={styles.cartEmpty}>
+          <p>No items selected</p>
         </div>
       </div>
     );
@@ -63,7 +81,7 @@ function Cart(props) {
         )}
       </div>
       <div className={`${styles.cartBody} ${modal && styles.modal}`}>
-        {cartItems.map((item) => (
+        {filteredCartItems.map((item) => (
           <div key={item.id} className={styles.itemBox}>
             <img src={item.image} alt={item.name} />
             <div className={styles.itemInfo}>
@@ -104,7 +122,7 @@ function Cart(props) {
           <div className={styles.sumamryBox}>
             <div className={styles.shippingBox}>
               <p className={styles.shippingText}>Shipping</p>
-              <p className={styles.shippingPrice}>$50</p>
+              <p className={styles.shippingPrice}>$ {totalCost && 50}</p>
             </div>
             <div className={styles.vatBox}>
               <p className={styles.vatText}>Vat(Included)</p>
@@ -120,7 +138,10 @@ function Cart(props) {
             </div>
           </div>
         )}
-        <button className={styles.btnCheckout} onClick={handleCartButton}>
+        <button
+          className={`${styles.btnCheckout} ${!totalCost && styles.disabled}`}
+          onClick={handleCartButton}
+        >
           {buttonName}
         </button>
       </div>

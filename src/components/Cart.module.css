@@ -195,6 +195,11 @@
   transition: all 0.2s;
 }
 
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 @media (hover: hover) {
   .btnRemove:hover {
     color: var(--orange);
@@ -206,5 +211,10 @@
 
   .btnCheckout:hover {
     background-color: var(--orange-hover);
+  }
+
+  .disabled:hover {
+    background-color: var(--orange);
+    opacity: 0.5;
   }
 }
