@@ -32,3 +32,22 @@
 .productsSection article:nth-child(even) > img {
   order: 1;
 }
+
+@media (max-width: 768px) {
+  .categoryPage main {
+    padding-top: 12rem;
+  }
+
+  .sectionsWrapper {
+    max-width: 69rem;
+  }
+
+  .productsSection article:nth-child(even) > img {
+    order: 0;
+  }
+
+  .productsSection {
+    margin-bottom: 0;
+    gap: 12rem;
+  }
+}

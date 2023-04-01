@@ -20,3 +20,9 @@
 .modalBg {
   background-color: rgba(0, 0, 0, 0.6);
 }
+
+@media (max-width: 768px) {
+  .modalWrapper {
+    max-width: 69rem;
+  }
+}

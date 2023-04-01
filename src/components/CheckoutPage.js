@@ -2,10 +2,56 @@ import styles from "./CheckoutPage.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cart from "./Cart";
+import { useFormik } from "formik";
+import * as yup from "yup";
 
 function CheckoutPage() {
   const navigate = useNavigate();
   const [cashSelected, setCashSelected] = useState(false);
+
+  const phoneRegex = /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+  const formSchema = yup.object().shape({
+    name: yup.string().required("Required"),
+    email: yup.string().email("Invalid email").required("Required"),
+    phone: yup.string().matches(phoneRegex, { message: "Invalid number" }),
+    address: yup.string().required("Required"),
+    zip: yup.number().typeError("Wrong format").required("Required"),
+    city: yup.string().required("Required"),
+    country: yup.string().required("Required"),
+    enumber: yup.number().typeError("Wrong format").required("Required"),
+    pin: yup.number().typeError("Wrong format").required("Required"),
+  });
+
+  const { values, handleChange, handleBlur, touched, errors } = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      zip: "",
+      city: "",
+      country: "",
+      pin: "",
+      enumber: "",
+    },
+    validationSchema: formSchema,
+  });
+
+  let formIsValid = false;
+  if (cashSelected) {
+    if (
+      values.name !== "" &&
+      Object.keys(errors).filter(
+        (error) => error !== "pin" && error !== "enumber"
+      ).length === 0
+    ) {
+      formIsValid = true;
+    }
+  } else {
+    if (values.name !== "" && Object.keys(errors).length === 0) {
+      formIsValid = true;
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -21,25 +67,67 @@ function CheckoutPage() {
                 <h4>Billing</h4>
                 <div className={styles.billingLabels}>
                   <label>
-                    <div className={styles.spanWrapper}>
+                    <div
+                      className={`${styles.spanWrapper} ${
+                        errors.name && touched.name && styles.error
+                      }`}
+                    >
                       <span>Name</span>
-                      <span>Name Error</span>
+                      {errors.name && touched.name && (
+                        <span>{errors.name}</span>
+                      )}
                     </div>
-                    <input type="text" placeholder="Alexei Ward" />
+                    <input
+                      name="name"
+                      type="text"
+                      placeholder="Alexei Ward"
+                      value={values.name}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={errors.name && touched.name && styles.error}
+                    />
                   </label>
                   <label>
-                    <div className={styles.spanWrapper}>
+                    <div
+                      className={`${styles.spanWrapper} ${
+                        errors.email && touched.email && styles.error
+                      }`}
+                    >
                       <span>Email Address</span>
-                      <span>Email Error</span>
+                      {errors.email && touched.email && (
+                        <span>{errors.email}</span>
+                      )}
                     </div>
-                    <input type="email" placeholder="alexei@mail.com" />
+                    <input
+                      name="email"
+                      type="email"
+                      placeholder="alexei@mail.com"
+                      value={values.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={errors.email && touched.email && styles.error}
+                    />
                   </label>
                   <label>
-                    <div className={styles.spanWrapper}>
+                    <div
+                      className={`${styles.spanWrapper} ${
+                        errors.phone && touched.phone && styles.error
+                      }`}
+                    >
                       <span>Phone Number</span>
-                      <span>Phone Error</span>
+                      {errors.phone && touched.phone && (
+                        <span>{errors.phone}</span>
+                      )}
                     </div>
-                    <input type="tel" placeholder="+1 202-555-0136" />
+                    <input
+                      name="phone"
+                      type="tel"
+                      placeholder="+1 202-555-0136"
+                      value={values.phone}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={errors.phone && touched.phone && styles.error}
+                    />
                   </label>
                 </div>
               </div>
@@ -47,32 +135,90 @@ function CheckoutPage() {
                 <h4>Shipping Info</h4>
                 <div className={styles.shippingLabels}>
                   <label>
-                    <div className={styles.spanWrapper}>
+                    <div
+                      className={`${styles.spanWrapper} ${
+                        errors.address && touched.address && styles.error
+                      }`}
+                    >
                       <span>Address</span>
-                      <span>Address Error</span>
+                      {errors.address && touched.address && (
+                        <span>{errors.address}</span>
+                      )}
                     </div>
-                    <input type="text" placeholder="1137 Williams Avenue" />
+                    <input
+                      name="address"
+                      type="text"
+                      placeholder="1137 Williams Avenue"
+                      value={values.address}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={
+                        errors.address && touched.address && styles.error
+                      }
+                    />
                   </label>
                   <label>
-                    <div className={styles.spanWrapper}>
+                    <div
+                      className={`${styles.spanWrapper} ${
+                        errors.zip && touched.zip && styles.error
+                      }`}
+                    >
                       <span>ZIP Code</span>
-                      <span>ZIP Error</span>
+                      {errors.zip && touched.zip && <span>{errors.zip}</span>}
                     </div>
-                    <input type="text" placeholder="10001" />
+                    <input
+                      name="zip"
+                      type="text"
+                      placeholder="10001"
+                      value={values.zip}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={errors.zip && touched.zip && styles.error}
+                    />
                   </label>
                   <label>
-                    <div className={styles.spanWrapper}>
+                    <div
+                      className={`${styles.spanWrapper} ${
+                        errors.city && touched.city && styles.error
+                      }`}
+                    >
                       <span>City</span>
-                      <span>City Error</span>
+                      {errors.city && touched.city && (
+                        <span>{errors.city}</span>
+                      )}
                     </div>
-                    <input type="text" placeholder="New York" />
+                    <input
+                      name="city"
+                      type="text"
+                      placeholder="New York"
+                      value={values.city}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={errors.city && touched.city && styles.error}
+                    />
                   </label>
                   <label>
-                    <div className={styles.spanWrapper}>
+                    <div
+                      className={`${styles.spanWrapper} ${
+                        errors.country && touched.country && styles.error
+                      }`}
+                    >
                       <span>Country</span>
-                      <span>Country Error</span>
+                      {errors.country && touched.country && (
+                        <span>{errors.country}</span>
+                      )}
                     </div>
-                    <input type="text" placeholder="United States" />
+                    <input
+                      name="country"
+                      type="text"
+                      placeholder="United States"
+                      value={values.country}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={
+                        errors.country && touched.country && styles.error
+                      }
+                    />
                   </label>
                 </div>
               </div>
@@ -103,12 +249,48 @@ function CheckoutPage() {
                   {!cashSelected && (
                     <div className={styles.moneyBox}>
                       <label>
-                        <span>e-Money Number</span>
-                        <input type="text" placeholder="238521993" />
+                        <div
+                          className={`${styles.spanWrapper} ${
+                            errors.enumber && touched.enumber && styles.error
+                          }`}
+                        >
+                          <span>e-Money Number</span>
+                          {errors.enumber && touched.enumber && (
+                            <span>{errors.enumber}</span>
+                          )}
+                        </div>
+                        <input
+                          name="enumber"
+                          type="text"
+                          placeholder="238521993"
+                          value={values.enumber}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          className={
+                            errors.enumber && touched.enumber && styles.error
+                          }
+                        />
                       </label>
                       <label>
-                        <span>e-Money PIN</span>
-                        <input type="text" placeholder="6891" />
+                        <div
+                          className={`${styles.spanWrapper} ${
+                            errors.pin && touched.pin && styles.error
+                          }`}
+                        >
+                          <span>e-Money PIN</span>
+                          {errors.pin && touched.pin && (
+                            <span>{errors.pin}</span>
+                          )}
+                        </div>
+                        <input
+                          name="pin"
+                          type="text"
+                          placeholder="6891"
+                          value={values.pin}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          className={errors.pin && touched.pin && styles.error}
+                        />
                       </label>
                     </div>
                   )}
@@ -133,7 +315,7 @@ function CheckoutPage() {
               </div>
             </form>
           </div>
-          <Cart page="checkout" />
+          <Cart page="checkout" formIsValid={formIsValid} />
         </div>
       </div>
     </div>

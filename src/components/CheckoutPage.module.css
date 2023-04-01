@@ -63,8 +63,12 @@
   justify-content: space-between;
 }
 
-.checkoutBox .spanWrapper span.error {
+.checkoutBox .spanWrapper.error span {
   color: red;
+}
+
+.checkoutBox input.error {
+  border: 2px solid red;
 }
 
 .checkoutBox input {
@@ -181,5 +185,32 @@
 
   .methodBox > div:hover {
     border: 1px solid var(--orange);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 4.8rem;
+  }
+
+  .pageWrapper {
+    max-width: 69rem;
+  }
+
+  .btnBack {
+    margin-bottom: 2.4rem;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper > div:last-child {
+    width: 100%;
+    margin: 0;
+  }
+
+  .checkoutBox {
+    width: 100%;
   }
 }

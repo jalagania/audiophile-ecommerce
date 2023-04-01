@@ -34,7 +34,9 @@ function Cart(props) {
         navigate("checkout");
         dispatch(setCartIsVisible(false));
       } else {
-        dispatch(setConfirmationIsVisible(true));
+        if (props.formIsValid) {
+          dispatch(setConfirmationIsVisible(true));
+        }
       }
     }
   }
@@ -139,7 +141,9 @@ function Cart(props) {
           </div>
         )}
         <button
-          className={`${styles.btnCheckout} ${!totalCost && styles.disabled}`}
+          className={`${styles.btnCheckout} ${!totalCost && styles.disabled} ${
+            !modal && !props.formIsValid && styles.disabled
+          }`}
           onClick={handleCartButton}
         >
           {buttonName}

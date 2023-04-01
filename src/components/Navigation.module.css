@@ -35,6 +35,12 @@ nav {
   cursor: pointer;
 }
 
+footer nav {
+  padding: 0;
+  border: none;
+  padding-top: 7.5rem;
+}
+
 @media (hover: hover) {
   .navLinks li:hover {
     color: var(--orange);
@@ -43,5 +49,33 @@ nav {
   .cartIcon img:hover {
     filter: brightness(0) saturate(100%) invert(53%) sepia(41%) saturate(648%)
       hue-rotate(338deg) brightness(97%) contrast(95%);
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    max-width: 69rem;
+  }
+
+  .navLinks {
+    margin: unset;
+  }
+
+  header .menuIcon {
+    display: block;
+    margin-right: 4rem;
+  }
+
+  header .navLinks {
+    display: none;
+  }
+
+  footer nav {
+    display: block;
+    margin: unset;
+  }
+
+  footer .navLinks {
+    margin-top: 3.2rem;
   }
 }

@@ -37,3 +37,15 @@
   border-radius: 0.8rem;
   min-width: 0;
 }
+
+@media (max-width: 768px) {
+  .bestgearSection {
+    padding: 10rem 0;
+    flex-direction: column-reverse;
+    gap: 6rem;
+  }
+  .bestgearText {
+    width: 85%;
+    text-align: center;
+  }
+}

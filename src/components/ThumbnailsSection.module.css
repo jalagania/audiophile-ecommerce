@@ -58,3 +58,13 @@
     color: var(--orange);
   }
 }
+
+@media (max-width: 768px) {
+  .thumbnailsSection {
+    gap: 1rem;
+  }
+
+  .thumbnailBox img {
+    width: 80%;
+  }
+}

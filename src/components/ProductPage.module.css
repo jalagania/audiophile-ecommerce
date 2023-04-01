@@ -73,6 +73,7 @@
 
 .youMayLike {
   margin-top: 16rem;
+  margin-bottom: 6.4rem;
   text-align: center;
 }
 
@@ -82,7 +83,7 @@
 }
 
 .otherProducts {
-  margin: 6.4rem 0;
+  margin-top: 6.4rem;
   display: flex;
   gap: 3rem;
 }
@@ -118,5 +119,46 @@
 
   .product a:hover {
     background-color: var(--orange-hover);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 3.2rem;
+  }
+
+  .sectionsWrapper {
+    max-width: 69rem;
+  }
+
+  .btnGoBack {
+    margin-bottom: 2.4rem;
+  }
+
+  .productInfoBox {
+    margin-top: 12rem;
+    flex-direction: column;
+  }
+
+  .features {
+    width: 100%;
+  }
+
+  .inBox {
+    display: flex;
+    gap: 13rem;
+  }
+
+  .productGallery {
+    margin-top: 12rem;
+  }
+
+  .youMayLike {
+    margin-top: 12rem;
+    margin-bottom: 3rem;
+  }
+
+  .otherProducts {
+    gap: 1rem;
   }
 }

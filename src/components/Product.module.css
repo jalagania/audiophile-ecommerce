@@ -129,3 +129,30 @@
     background-color: var(--orange-hover);
   }
 }
+
+@media (max-width: 768px) {
+  .category.product {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .productPage.product {
+    gap: 7rem;
+  }
+
+  .productPage .productImg {
+    width: 28rem;
+    min-width: unset;
+    flex-grow: 0;
+  }
+
+  .category .productText {
+    width: 80%;
+    text-align: center;
+  }
+
+  .productPage .productText h2 {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+  }
+}

@@ -36,7 +36,11 @@ function Product({ page, product, location }) {
   }
 
   return (
-    <article className={styles.product}>
+    <article
+      className={`${styles.product} ${
+        page === "product" ? `${styles.productPage}` : `${styles.category}`
+      }`}
+    >
       <img
         src={product[imageType][location]}
         alt={product.category}
