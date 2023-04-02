@@ -51,3 +51,19 @@
     gap: 12rem;
   }
 }
+
+@media (max-width: 425px) {
+  .pageBanner {
+    padding: 3.2rem 0;
+  }
+
+  .pageBanner h1 {
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    letter-spacing: 2px;
+  }
+
+  .categoryPage main {
+    padding-top: 6.4rem;
+  }
+}

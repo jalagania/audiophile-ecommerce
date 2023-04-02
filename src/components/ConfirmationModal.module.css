@@ -177,3 +177,25 @@
     background-color: var(--orange-hover);
   }
 }
+
+@media (max-width: 425px) {
+  .confirmationBox {
+    width: 100%;
+    padding: 2.4rem;
+  }
+
+  .confirmationBox h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin: 1rem 0;
+  }
+
+  .ordersBox {
+    margin: 2rem 0;
+    flex-direction: column;
+  }
+
+  .totalCostBox {
+    padding: 2rem 2.4rem;
+  }
+}

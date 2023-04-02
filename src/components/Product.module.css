@@ -156,3 +156,25 @@
     line-height: 3.2rem;
   }
 }
+
+@media (max-width: 425px) {
+  .category .productText {
+    width: 100%;
+  }
+
+  .productPage.product {
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  .productPage .productImg {
+    width: 100%;
+    min-width: unset;
+    flex-grow: 0;
+  }
+
+  .productPage .productText h2 {
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+  }
+}

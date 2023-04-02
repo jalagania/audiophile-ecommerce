@@ -80,7 +80,7 @@
 .speakerOrange {
   padding: 10rem 10rem 0 12rem;
   background-color: var(--orange);
-  background-image: url("/public/assets/home/desktop/pattern-circles.svg");
+  background-image: url(/public/assets/home/desktop/pattern-circles.svg);
   background-repeat: no-repeat;
   background-size: 83%;
   background-position: -14rem -2rem;
@@ -211,8 +211,8 @@
 
 @media (max-width: 768px) {
   .heroSection {
-    height: 75vh;
-    padding-top: 24rem;
+    height: 75rem;
+    padding-top: 23rem;
     background-image: url(/public/assets/home/tablet/image-header.jpg);
   }
 
@@ -237,6 +237,8 @@
 
   .speakerOrange {
     padding: 7rem;
+    background-size: 140%;
+    background-position: -14rem -30rem;
     flex-direction: column;
     align-items: center;
     gap: 7rem;
@@ -253,5 +255,59 @@
 
   .earphoneText {
     padding: 9rem 4rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .heroSection {
+    height: 60rem;
+    padding-top: 20rem;
+    background-image: url(/public/assets/home/mobile/image-header.jpg);
+  }
+
+  .heroText {
+    width: 90%;
+  }
+
+  .heroText h1 {
+    font-size: 3.6rem;
+    margin-top: 1.6rem;
+    line-height: 4rem;
+  }
+
+  .heroText a {
+    margin-top: 2em;
+  }
+
+  .productsSection {
+    grid-template-columns: 1fr;
+  }
+
+  .speakerOrange {
+    background-size: cover;
+    background-position: -12.3rem -12rem;
+    padding: 5rem 2.4rem;
+    gap: 5rem;
+  }
+
+  .speakerOrange h2 {
+    font-size: 3.6rem;
+    line-height: 4rem;
+  }
+
+  .speakerOrange img {
+    width: 50%;
+  }
+
+  .speakerOrange .textBox {
+    width: 90%;
+  }
+
+  .speakerGray .textBox {
+    left: 2rem;
+  }
+
+  .earphoneText {
+    padding: 4rem 2rem;
   }
 }

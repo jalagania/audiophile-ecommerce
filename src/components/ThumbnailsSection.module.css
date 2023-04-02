@@ -68,3 +68,10 @@
     width: 80%;
   }
 }
+
+@media (max-width: 425px) {
+  .thumbnailsSection {
+    flex-direction: column;
+    gap: 10rem;
+  }
+}

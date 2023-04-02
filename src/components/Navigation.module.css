@@ -108,3 +108,51 @@ footer nav {
     margin-top: 3.2rem;
   }
 }
+
+@media (max-width: 425px) {
+  nav {
+    justify-content: space-between;
+  }
+
+  header .menuIcon {
+    margin: 0;
+  }
+
+  .menuWrapper {
+    padding: 2rem;
+  }
+
+  .menuWrapper > section {
+    padding-top: 0;
+    gap: 2rem;
+  }
+
+  .menuWrapper > section > div {
+    padding: 2rem;
+  }
+
+  .menuWrapper > section > div > p {
+    margin-top: 0;
+  }
+
+  .menuWrapper > section img {
+    display: none;
+  }
+
+  footer nav {
+    padding-top: 4.8rem;
+  }
+
+  footer .navLinks {
+    margin-top: 4.8rem;
+    flex-direction: column;
+  }
+
+  footer nav > a img {
+    margin: 0 auto;
+  }
+
+  .cartIcon {
+    margin: 0;
+  }
+}

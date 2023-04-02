@@ -19,7 +19,7 @@ footer {
   margin: 3.5rem auto 0 auto;
 
   display: grid;
-  grid-template-columns: 54rem 1fr;
+  grid-template-columns: 78% 1fr;
   align-items: end;
 }
 
@@ -63,6 +63,28 @@ footer {
   }
 
   .copyright {
+    grid-area: 2 / 1;
+  }
+}
+
+@media (max-width: 425px) {
+  .line {
+    margin: 0 auto;
+  }
+
+  .textWrapper {
+    text-align: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 4.8rem;
+  }
+
+  .socialIcons {
+    grid-area: 3 / 1;
+  }
+
+  .copyright {
+    margin-top: 0;
     grid-area: 2 / 1;
   }
 }

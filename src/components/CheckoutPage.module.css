@@ -214,3 +214,28 @@
     width: 100%;
   }
 }
+
+@media (max-width: 425px) {
+  .checkoutBox {
+    padding: 2.4rem;
+  }
+
+  .billingLabels,
+  .shippingLabels {
+    grid-template-columns: 1fr;
+  }
+
+  .methodBox,
+  .moneyBox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .methodBox > p {
+    margin-bottom: 0;
+  }
+
+  .moneyBox {
+    gap: 2.4rem;
+  }
+}

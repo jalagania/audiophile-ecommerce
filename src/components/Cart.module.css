@@ -218,3 +218,19 @@
     opacity: 0.5;
   }
 }
+
+@media (max-width: 425px) {
+  .cartContainer {
+    width: 100%;
+    padding: 3.2rem 2.4rem;
+    margin: 0 auto;
+  }
+
+  .cartBody.modal {
+    max-height: 15rem;
+  }
+
+  .amountButtons p {
+    width: 2.5rem;
+  }
+}

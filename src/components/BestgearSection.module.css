@@ -44,8 +44,26 @@
     flex-direction: column-reverse;
     gap: 6rem;
   }
+
   .bestgearText {
     width: 85%;
     text-align: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .bestgearSection {
+    padding: 10rem 0;
+    gap: 4rem;
+  }
+
+  .bestgearText h2 {
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    letter-spacing: 1px;
+  }
+
+  .bestgearText {
+    width: 100%;
   }
 }
