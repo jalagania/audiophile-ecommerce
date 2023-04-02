@@ -10,3 +10,4 @@ Live Site URL:
 - CSS (Flexbox, CSS Grid, CSS custom properties)
 - React/Redux Toolkit
 - JSON
+- blabla
