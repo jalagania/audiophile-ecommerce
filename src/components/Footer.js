@@ -1,5 +1,6 @@
 import styles from "./Footer.module.css";
 import Navigation from "./Navigation";
+import Attribution from "./Attribution";
 
 function Footer() {
   return (
@@ -50,11 +51,11 @@ function Footer() {
               </button>
             </li>
           </ul>
-
           <p className={styles.copyright}>
             Copyright 2023. All Rights Reserved
           </p>
         </div>
+        <Attribution />
       </div>
     </footer>
   );
